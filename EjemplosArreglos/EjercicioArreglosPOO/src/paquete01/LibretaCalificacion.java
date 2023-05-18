@@ -5,21 +5,22 @@
  */
 package paquete01;
 
-/**
- *
- * @author reroes
- */
+import paquete04.Colegio;
+
 public class LibretaCalificacion {
 
     private String estudiante;
     private double promedio;
     private String promedioCualitativo;
     private double[] calificaciones;
-    // private Colegio c;
+    private Colegio cl;
+    
+    
 
-    public LibretaCalificacion(String n, double[] c) {
+    public LibretaCalificacion(String n, double[] c, Colegio x) {
         estudiante = n;
         calificaciones = c;
+        cl = x;
     }
 
     public void establecerEstudiante(String n) {
@@ -64,6 +65,10 @@ public class LibretaCalificacion {
     public void establecerCalificaciones(double[] n) {
         calificaciones = n;
     }
+    
+    public void establecerColegio(Colegio n) {
+        cl = n;
+    }
 
     public String obtenerEstudiante() {
         return estudiante;
@@ -80,14 +85,20 @@ public class LibretaCalificacion {
     public double[] obtenerCalificaciones() {
         return calificaciones;
     }
+    
+    public Colegio obtenerColegio() {
+        return cl;
+    }
 
     @Override
     public String toString() {
         String cadena = "Libreta de Calificaciones\n";
-        cadena = String.format("%sNombre: %s\nCalificaciones:\n", cadena,
-                obtenerEstudiante());
-        // cadena = String.format("%sNombre: %s\nCalificaciones:\n", cadena,
-        //        estudiante);
+        //cadena = String.format("%sNombre: %s\nCalificaciones:\n", cadena,
+        //        obtenerEstudiante());
+        cadena = String.format("%sColegio: %s\nCiudad: %s\nNombre: %s\nCalificaciones:\n", 
+                cadena,
+                obtenerColegio().obtenerNombre(),obtenerColegio().obtenerCiudad(),
+                estudiante);
         
         for (int i = 0; i < obtenerCalificaciones().length; i++) {
             cadena = String.format("%s\t\t%.2f\n", cadena,

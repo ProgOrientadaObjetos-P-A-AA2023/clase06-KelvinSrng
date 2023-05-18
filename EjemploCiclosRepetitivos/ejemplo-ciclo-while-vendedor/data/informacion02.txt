@@ -1,0 +1,14 @@
+Datos de Vendedor
+Nombre: JUan
+Edad: 35
+Salario mínimo: 420,00
+Número de autos: 23
+Pago mensual: 3870,00
+
+Datos de Vendedor
+Nombre: Alex
+Edad: 23
+Salario mínimo: 450,00
+Número de autos: 26
+Pago mensual: 4350,00
+
